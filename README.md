@@ -1,4 +1,6 @@
 # Cinetopia - Organize seus Filmes Favoritos!
+![Página Inicial](https://github.com/StephanieTabosa/cinetopia-ios/assets/41654616/8bcb5fba-6c28-4e24-b1a5-2732929485f8)
+
 
 Bem-vindo à Cinetopia, o lugar perfeito para buscar, salvar e organizar seus filmes favoritos! Este aplicativo foi desenvolvido para proporcionar a melhor experiência ao gerenciar sua coleção de filmes de forma simples e eficiente.
 
@@ -20,3 +22,4 @@ Bem-vindo à Cinetopia, o lugar perfeito para buscar, salvar e organizar seus fi
 
 
 Aproveite o app Cinetopia e transforme a maneira como você gerencia seus filmes favoritos!
+
