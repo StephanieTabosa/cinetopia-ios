@@ -10,9 +10,10 @@ import UIKit
 class MovieTableViewCell: UITableViewCell {
     
     private lazy var movieImageView: UIImageView = {
-        let image = UIImageView(image: UIImage.barbie)
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.layer.masksToBounds = true
         image.layer.cornerRadius = 8
         return image
     }()
@@ -20,7 +21,6 @@ class MovieTableViewCell: UITableViewCell {
     private lazy var movieTextTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Barbie"
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.textColor = .accent
         return label
@@ -29,11 +29,16 @@ class MovieTableViewCell: UITableViewCell {
     private lazy var movieReleaseDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Lançamento: 20/07/2023"
         label.textColor = .accent
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
+    
+    func configureCell(movie: Movie) {
+        movieImageView.image = UIImage(named: movie.image)
+        movieTextTitleLabel.text = movie.title
+        movieReleaseDateLabel.text = "Lançamento: \(movie.releaseDate)"
+    }
     
     private func addSubviews() {
         addSubview(movieImageView)
