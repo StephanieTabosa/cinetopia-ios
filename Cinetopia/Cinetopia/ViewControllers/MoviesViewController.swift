@@ -59,6 +59,7 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell {
             cell.configureCell(movie: movies[indexPath.row])
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
@@ -66,6 +67,8 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let movieDetailsVC = MovieDetailsViewController(movie: movies[indexPath.row])
+        navigationController?.pushViewController(movieDetailsVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
