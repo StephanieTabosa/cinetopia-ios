@@ -17,6 +17,8 @@ class MovieDetailsViewController: UIViewController {
         label.text = movie.title
         label.font = .boldSystemFont(ofSize: 24)
         label.textColor = .accent
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
         
     }()
@@ -83,6 +85,8 @@ class MovieDetailsViewController: UIViewController {
         NSLayoutConstraint.activate([
             movieTextTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -32),
             movieTextTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            movieTextTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            movieTextTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
             movieImage.topAnchor.constraint(equalTo: movieTextTitle.bottomAnchor, constant: 32),
             movieImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
