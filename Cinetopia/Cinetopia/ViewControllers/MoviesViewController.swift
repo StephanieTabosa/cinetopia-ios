@@ -58,8 +58,6 @@ class MoviesViewController: UIViewController {
         } catch (let error){
             print(error)
         }
-        
-        
     }
     
     private func addSubviews() {
